@@ -31,11 +31,9 @@ const makeGetRequest = (path: string, params: ?Object) => {
 }
 
 const makePostRequest = (path: string, body: ?Object) => {
-  const url = ROOT + path
-  return fetch(url, {
+  return makeRequest(path, {
       method: 'POST',
-      body: body,
-      headers: HEADERS
+      body: body
     })
 }
 
