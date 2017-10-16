@@ -21,7 +21,7 @@ test(`get the details for a group based on the group name`, async (t) => {
       }
     })
 
-  const groupDetails = await getGroupDetails({group: GROUP})
+  const groupDetails = await getGroupDetails({ group: GROUP })
 
   t.is(groupDetails.Name, GROUP)
   t.is(groupDetails.Id, GROUP_ID)
@@ -43,7 +43,7 @@ test(`get the details for a group based on the group id`, async (t) => {
       }
     })
 
-  const groupDetails = await getGroupDetails({groupId: GROUP_ID})
+  const groupDetails = await getGroupDetails({ groupId: GROUP_ID })
 
   t.is(groupDetails.Name, GROUP)
   t.is(groupDetails.Id, GROUP_ID)
