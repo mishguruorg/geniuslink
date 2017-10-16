@@ -1,4 +1,5 @@
 /* @flow */
+
 import fetch, { retriers } from 'json-fetch'
 import qs from 'query-string'
 
@@ -6,8 +7,13 @@ const ROOT = 'https://api.geni.us'
 
 const HEADERS = {
   'Accept': 'application/json',
-  'X-Api-Key': '***REMOVED***',
-  'X-Api-Secret': '***REMOVED***'
+  'X-Api-Key': undefined,
+  'X-Api-Secret': undefined
+}
+
+const setApiKeys = (key: string, secret: string) => {
+  HEADERS['X-Api-Key'] = key
+  HEADERS['X-Api-Secret'] = secret
 }
 
 const makeRequest = (path: string, options: Object = {}) => {
@@ -26,8 +32,11 @@ const makeRequest = (path: string, options: Object = {}) => {
 }
 
 const makeGetRequest = (path: string, params: ?Object) => {
-  const queryString = qs.stringify(params)
-  return makeRequest(path + '?' + queryString)
+  let queryString = ''
+  if (params != null) {
+    queryString = '?' + qs.stringify(params)
+  }
+  return makeRequest(path + queryString)
 }
 
 const makePostRequest = (path: string, body: ?Object) => {
@@ -38,6 +47,7 @@ const makePostRequest = (path: string, body: ?Object) => {
 }
 
 export {
+  setApiKeys,
   makeGetRequest,
   makePostRequest
 }

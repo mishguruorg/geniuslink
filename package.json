@@ -15,7 +15,8 @@
     "test-only": "NODE_ENV=test_local pkg-test-only"
   },
   "devDependencies": {
-    "@mishguru/package": "^1.14.0"
+    "@mishguru/package": "^1.14.0",
+    "nock": "^9.0.22"
   },
   "babel": {
     "presets": [
