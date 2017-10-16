@@ -50,7 +50,10 @@ const url = 'https://mish.guru'
 const groupId = 12345
 
 addTrackedLinkForGroup(url, groupId)
-  .then(console.log)
+  .then((shortcode) => {
+    // shortcode === '0zs3at'
+    ...
+  })
 ```
 
 ### getTotalLinkClicks
@@ -63,5 +66,8 @@ import { getTotalLinkClicks } from '@mishguru/geniuslink'
 const shortcode = 'r93n5'
 
 getTotalLinkClicks(shortcode)
-  .then(console.log)
+  .then((count) => {
+    // count === 472
+    ...
+  })
 ```
