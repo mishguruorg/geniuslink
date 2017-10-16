@@ -30,6 +30,16 @@ const makeGetRequest = (path: string, params: ?Object) => {
   return makeRequest(path + '?' + queryString)
 }
 
+const makePostRequest = (path: string, body: ?Object) => {
+  const url = ROOT + path
+  return fetch(url, {
+      method: 'POST',
+      body: body,
+      headers: HEADERS
+    })
+}
+
 export {
-  makeGetRequest
+  makeGetRequest,
+  makePostRequest
 }
