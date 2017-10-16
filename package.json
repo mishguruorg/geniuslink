@@ -1,0 +1,53 @@
+{
+  "name": "geniuslink",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": "git@github.com:mishguruorg/geniuslink",
+  "author": "George Czabania <george@mish.guru>",
+  "license": "MIT",
+  "scripts": {
+    "build": "pkg-build",
+    "coverage": "NODE_ENV=test_local pkg-coverage",
+    "flow": "pkg-flow",
+    "lint": "pkg-lint",
+    "prepublish": "pkg-build",
+    "test": "NODE_ENV=test_local pkg-test",
+    "test-only": "NODE_ENV=test_local pkg-test-only"
+  },
+  "devDependencies": {
+    "@mishguru/package": "^1.14.0"
+  },
+  "babel": {
+    "presets": [
+      "flow",
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "transform-object-rest-spread",
+        {
+          "useBuiltIns": true
+        }
+      ]
+    ]
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "dependencies": {
+    "json-fetch": "^7.3.0",
+    "node-fetch": "^1.7.3",
+    "query-string": "^5.0.0",
+    "ramda": "^0.25.0"
+  }
+}
