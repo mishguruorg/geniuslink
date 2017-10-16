@@ -2,10 +2,10 @@
 
 import { makeGetRequest } from '../request'
 
-const path = '/v1/reports/link-click-trend-by-resolution'
+const PATH = '/v1/reports/link-click-trend-by-resolution'
 
 const getTotalLinkClicks = async (shortcode: string) => {
-  const res = await makeGetRequest(path, {
+  const res = await makeGetRequest(PATH, {
     shortcode,
     advertiserid: '0',
     resolution: 'lifetime'
