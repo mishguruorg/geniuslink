@@ -32,9 +32,9 @@ const makeGetRequest = (path: string, params: ?Object) => {
 
 const makePostRequest = (path: string, body: ?Object) => {
   return makeRequest(path, {
-      method: 'POST',
-      body: body
-    })
+    method: 'POST',
+    body: body
+  })
 }
 
 export {
