@@ -39,17 +39,33 @@ initGeniusLink({
 })
 ```
 
-### addTrackedLinkForGroup
+### addGroup
+
+> Create a new group
+
+```javascript
+import { addGroup } from '@mishguru/geniuslink'
+
+const groupName = 'best-links-ever'
+
+addGroup(groupName)
+  .then((groupId) => {
+    // groupId === 33118
+    ...
+  })
+```
+
+### addLinkToGroup
 
 > Create a new tracked link with a specific group
 
 ```javascript
-import { addTrackedLinkForGroup } from '@mishguru/geniuslink'
+import { addLinkToGroup } from '@mishguru/geniuslink'
 
 const url = 'https://mish.guru'
 const groupId = 12345
 
-addTrackedLinkForGroup(url, groupId)
+addLinkToGroup(url, groupId)
   .then((shortcode) => {
     // shortcode === '0zs3at'
     ...

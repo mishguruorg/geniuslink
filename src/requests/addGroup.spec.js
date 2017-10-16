@@ -1,0 +1,34 @@
+/* @flow */
+
+import test from 'ava'
+import nock from 'nock'
+
+import addGroup from './addGroup'
+
+test(`create a new tracked link`, async (t) => {
+  const GROUP_NAME = 'billybob'
+  const NEW_GROUP_ID = 33128
+
+  nock('https://api.geni.us')
+    .get('/v1/groups/add')
+    .query({
+      GroupName: GROUP_NAME
+    })
+    .reply(200, {
+      IsError: {
+        ErrorMessage: '',
+        ErrorTitle: ''
+      },
+      NewGroupId: NEW_GROUP_ID,
+      Now: '/Date(1508127068164)/',
+      Request: {
+        GroupName: GROUP_NAME,
+        Notes: '',
+        Id: 0
+      }
+    })
+
+  const newGroupId = await addGroup(GROUP_NAME)
+
+  t.is(newGroupId, NEW_GROUP_ID)
+})
