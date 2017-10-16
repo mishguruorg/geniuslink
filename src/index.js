@@ -1,11 +1,11 @@
 /* @flow */
 
 import initGeniusLink from './initGeniusLink'
-import addTrackedLinkForGroup from './requests/addTrackedLinkForGroup'
+import addLinkToGroup from './requests/addLinkToGroup'
 import getTotalLinkClicks from './requests/getTotalLinkClicks'
 
 export {
   initGeniusLink,
-  addTrackedLinkForGroup,
+  addLinkToGroup,
   getTotalLinkClicks
 }
