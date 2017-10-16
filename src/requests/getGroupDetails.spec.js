@@ -3,9 +3,9 @@
 import test from 'ava'
 import nock from 'nock'
 
-import getGroupDetails from './getGroupDetails'
+import { getGroupDetailsById, getGroupDetailsByName } from './getGroupDetails'
 
-test(`get the details for a group based on the group name`, async (t) => {
+test(`getGroupDetailsByName should find the details for a group based on the group name`, async (t) => {
   const GROUP_ID = '32744'
   const GROUP = 'default'
 
@@ -21,13 +21,13 @@ test(`get the details for a group based on the group name`, async (t) => {
       }
     })
 
-  const groupDetails = await getGroupDetails({ group: GROUP })
+  const groupDetails = await getGroupDetailsByName(GROUP)
 
   t.is(groupDetails.Name, GROUP)
   t.is(groupDetails.Id, GROUP_ID)
 })
 
-test(`get the details for a group based on the group id`, async (t) => {
+test(`getGroupDetailsById should find the details for a group based on the group id`, async (t) => {
   const GROUP_ID = '32744'
   const GROUP = 'default'
 
@@ -43,7 +43,7 @@ test(`get the details for a group based on the group id`, async (t) => {
       }
     })
 
-  const groupDetails = await getGroupDetails({ groupId: GROUP_ID })
+  const groupDetails = await getGroupDetailsById(GROUP_ID)
 
   t.is(groupDetails.Name, GROUP)
   t.is(groupDetails.Id, GROUP_ID)
