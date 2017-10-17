@@ -87,3 +87,35 @@ getTotalLinkClicks(shortcode)
     ...
   })
 ```
+
+### getGroupDetailsByName
+
+> Get details of a group based on the group name
+
+```javascript
+import { getGroupDetailsByName } from '@mishguru/geniuslink'
+
+const name = 'default'
+
+getGroupDetailsByName(name)
+  .then((group) => {
+    // group.id === '1234'
+    ...
+  })
+```
+
+### getGroupDetailsById
+
+> Get details of a group based on the group id
+
+```javascript
+import { getGroupDetailsByName } from '@mishguru/geniuslink'
+
+const id = '1234'
+
+getGroupDetailsBId(id)
+  .then((group) => {
+    // group.name === 'default'
+    ...
+  })
+```
