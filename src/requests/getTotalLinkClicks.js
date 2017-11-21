@@ -11,14 +11,13 @@ const getTotalLinkClicks = async (shortcode: string) => {
     resolution: 'lifetime'
   })
   const clicksByDate = res.body.ClicksByDate
-    let numberOfClicks
-    if (clicksByDate.length === 0){
-      numberOfClicks = 0
-    }
-    else {
-        numberOfClicks = res.body.ClicksByDate[0].Value.Clicks
-    }
-    return numberOfClicks
+  let numberOfClicks
+  if (clicksByDate.length === 0) {
+    numberOfClicks = 0
+  } else {
+    numberOfClicks = res.body.ClicksByDate[0].Value.Clicks
+  }
+  return numberOfClicks
 }
 
 export default getTotalLinkClicks
