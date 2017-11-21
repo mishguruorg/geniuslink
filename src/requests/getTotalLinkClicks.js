@@ -1,4 +1,5 @@
 /* @flow */
+import { pathOr } from 'ramda'
 
 import { makeGetRequest } from '../request'
 
@@ -10,14 +11,7 @@ const getTotalLinkClicks = async (shortcode: string) => {
     advertiserid: '0',
     resolution: 'lifetime'
   })
-  const clicksByDate = res.body.ClicksByDate
-  let numberOfClicks
-  if (clicksByDate.length === 0) {
-    numberOfClicks = 0
-  } else {
-    numberOfClicks = res.body.ClicksByDate[0].Value.Clicks
-  }
-  return numberOfClicks
+  return pathOr(0, [0, 'Value', 'Clicks'], res.body.ClicksByDate)
 }
 
 export default getTotalLinkClicks
