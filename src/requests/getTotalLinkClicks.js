@@ -11,7 +11,9 @@ const getTotalLinkClicks = async (shortcode: string) => {
     advertiserid: '0',
     resolution: 'lifetime'
   })
-  return pathOr(0, [0, 'Value', 'Clicks'], res.body.ClicksByDate)
+  const defaultValue = 0
+  const path = [0, 'Value', 'Clicks']
+  return pathOr(defaultValue, path, res.body.ClicksByDate)
 }
 
 export default getTotalLinkClicks
