@@ -10,7 +10,15 @@ const getTotalLinkClicks = async (shortcode: string) => {
     advertiserid: '0',
     resolution: 'lifetime'
   })
-  return res.body.ClicksByDate[0].Value.Clicks
+  const clicksByDate = res.body.ClicksByDate
+    let numberOfClicks
+    if (clicksByDate.length === 0){
+      numberOfClicks = 0
+    }
+    else {
+        numberOfClicks = res.body.ClicksByDate[0].Value.Clicks
+    }
+    return numberOfClicks
 }
 
 export default getTotalLinkClicks
