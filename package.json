@@ -15,35 +15,8 @@
     "test-only": "NODE_ENV=test_local pkg-test-only"
   },
   "devDependencies": {
-    "@mishguru/package": "^1.14.0",
+    "@mishguru/package": "^4.1.0",
     "nock": "^9.0.22"
-  },
-  "babel": {
-    "presets": [
-      "flow",
-      [
-        "env",
-        {
-          "targets": {
-            "node": "current"
-          }
-        }
-      ]
-    ],
-    "plugins": [
-      [
-        "transform-object-rest-spread",
-        {
-          "useBuiltIns": true
-        }
-      ]
-    ]
-  },
-  "ava": {
-    "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
   },
   "dependencies": {
     "json-fetch": "^7.3.0",
