@@ -15,13 +15,13 @@
     "test-only": "NODE_ENV=test_local pkg-test-only"
   },
   "devDependencies": {
-    "@mishguru/package": "^4.1.0",
-    "nock": "^9.0.22"
+    "@mishguru/package": "^4.3.1",
+    "nock": "^9.4.1"
   },
   "dependencies": {
-    "json-fetch": "^7.3.0",
-    "node-fetch": "^1.7.3",
-    "query-string": "^5.0.0",
+    "json-fetch": "^7.5.1",
+    "node-fetch": "^2.1.2",
+    "query-string": "^6.1.0",
     "ramda": "^0.25.0"
   }
 }
