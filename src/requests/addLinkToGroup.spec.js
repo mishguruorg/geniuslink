@@ -27,7 +27,6 @@ test(`create a new tracked link`, async (t) => {
 
 test('If genius replies with 200 but LinkResponses contains an error message, throw an error that we can easily see', async (t) => {
   const LINK = 'http://app.mish.guru'
-  const SHORTCODE = 'b823f2'
   const GROUP_ID = 99870
 
   nock('https://api.geni.us')
