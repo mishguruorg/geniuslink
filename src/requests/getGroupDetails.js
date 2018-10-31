@@ -1,4 +1,4 @@
-/* @flow */
+// @flow
 
 import { makeGetRequest } from '../request'
 

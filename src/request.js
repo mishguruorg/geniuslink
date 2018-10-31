@@ -1,4 +1,4 @@
-/* @flow */
+// @flow
 
 import fetch, { retriers } from 'json-fetch'
 import qs from 'query-string'

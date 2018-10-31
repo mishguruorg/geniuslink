@@ -1,4 +1,4 @@
-/* @flow */
+// @flow
 
 import { makePostRequest } from '../request'
 import { AddLinkToGroupFailed } from '../errors'
