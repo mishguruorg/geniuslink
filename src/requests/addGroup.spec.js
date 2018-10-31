@@ -37,7 +37,5 @@ test(`create a new tracked link`, async (t) => {
 test(`GroupNameCharLimitExceeded is thrown when the group name is too long`, async (t) => {
   const GROUP_NAME = 'hereisareallyreallylonggroupname'
 
-  const error = await t.throwsAsync(addGroup(GROUP_NAME))
-
-  t.truthy(error instanceof GroupNameCharLimitExceeded)
+  await t.throwsAsync(addGroup(GROUP_NAME), GroupNameCharLimitExceeded)
 })

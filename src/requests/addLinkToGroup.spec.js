@@ -37,6 +37,5 @@ test('If genius replies with 200 but LinkResponses contains an error message, th
       }]
     })
 
-  const error = await t.throwsAsync(addLinkToGroup(LINK, GROUP_ID))
-  t.truthy(error instanceof AddLinkToGroupFailed)
+  await t.throwsAsync(addLinkToGroup(LINK, GROUP_ID), AddLinkToGroupFailed)
 })
