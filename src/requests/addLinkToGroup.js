@@ -12,6 +12,13 @@ const addLinkToGroup = async (url: string, TSID: string | number) => {
     linkCreatorSetting: 'Simple'
   })
   const [ linkResponse ] = res.body.LinkResponses
+
+  if (linkResponse.ErrorMessage && linkResponse.ErrorMessage !== '') {
+    const error = new Error('Genius API could not generate a code, but still came back with 200')
+    error.originalMessage = linkResponse.ErrorMessage
+    throw error
+  }
+
   return linkResponse.NewLink.ShortUrlCode
 }
 
