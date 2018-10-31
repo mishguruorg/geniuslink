@@ -1,4 +1,4 @@
-/* @flow */
+// @flow
 
 import initGeniusLink from './initGeniusLink'
 import addGroup from './requests/addGroup'

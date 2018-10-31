@@ -1,7 +1,7 @@
-/* @flow */
-
 import test from 'ava'
 import nock from 'nock'
+
+import { AddLinkToGroupFailed } from '../errors'
 
 import addLinkToGroup from './addLinkToGroup'
 
@@ -37,5 +37,5 @@ test('If genius replies with 200 but LinkResponses contains an error message, th
       }]
     })
 
-  await t.throws(addLinkToGroup(LINK, GROUP_ID), 'Genius API could not generate a code, but still came back with 200')
+  await t.throwsAsync(addLinkToGroup(LINK, GROUP_ID), AddLinkToGroupFailed)
 })

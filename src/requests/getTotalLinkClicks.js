@@ -1,4 +1,4 @@
-/* @flow */
+// @flow
 import { pathOr } from 'ramda'
 
 import { makeGetRequest } from '../request'
