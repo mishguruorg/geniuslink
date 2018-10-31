@@ -15,10 +15,11 @@
     "test-only": "NODE_ENV=test_local pkg-test-only"
   },
   "devDependencies": {
-    "@mishguru/package": "^4.3.1",
+    "@mishguru/package": "^5.1.0",
     "nock": "^9.4.1"
   },
   "dependencies": {
+    "es6-error": "^4.1.1",
     "json-fetch": "^7.5.1",
     "node-fetch": "^2.1.2",
     "query-string": "^6.1.0",

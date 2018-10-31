@@ -3,6 +3,8 @@
 import test from 'ava'
 import nock from 'nock'
 
+import { AddLinkToGroupFailed } from '../errors'
+
 import addLinkToGroup from './addLinkToGroup'
 
 test(`create a new tracked link`, async (t) => {
@@ -37,5 +39,6 @@ test('If genius replies with 200 but LinkResponses contains an error message, th
       }]
     })
 
-  await t.throws(addLinkToGroup(LINK, GROUP_ID), 'Genius API could not generate a code, but still came back with 200')
+  const error = await t.throwsAsync(addLinkToGroup(LINK, GROUP_ID))
+  t.truthy(error instanceof AddLinkToGroupFailed)
 })
