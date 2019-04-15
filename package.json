@@ -1,7 +1,7 @@
 {
   "name": "@mishguru/geniuslink",
   "private": true,
-  "version": "2.1.2",
+  "version": "3.0.0",
   "main": "dist/index.js",
   "repository": "git@github.com:mishguruorg/geniuslink",
   "author": "George Czabania <george@mish.guru>",
