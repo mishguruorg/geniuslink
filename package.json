@@ -10,7 +10,6 @@
     "build": "pkg-build",
     "lint": "pkg-lint",
     "tidy": "pkg-tidy",
-    "prepublish": "pkg-build",
     "test": "NODE_ENV=test pkg-test",
     "coverage": "NODE_ENV=test pkg-coverage"
   },
@@ -26,5 +25,10 @@
     "got": "9.6.0",
     "query-string": "^6.4.2",
     "ramda": "^0.26.1"
+  },
+  "release-it": {
+    "scripts": {
+      "beforeStart": "npm run build"
+    }
   }
 }
