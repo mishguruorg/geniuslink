@@ -1,5 +1,3 @@
-// @flow
-
 import { makePostRequest } from '../request'
 import { AddLinkToGroupFailed } from '../errors'
 
@@ -10,7 +8,7 @@ const addLinkToGroup = async (url: string, groupId: string | number) => {
     url,
     groupId,
     domain: 'mish.gr',
-    linkCreatorSetting: 'Simple'
+    linkCreatorSetting: 'Simple',
   })
   return res.body.shortUrl.code
 }

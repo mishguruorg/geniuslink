@@ -1,5 +1,3 @@
-// @flow
-
 import test from 'ava'
 import nock from 'nock'
 
@@ -14,14 +12,16 @@ test('get total link clicks returns a value when there are clicks', async (t) =>
     .query({
       shortcode: SHORTCODE,
       advertiserid: '0',
-      resolution: 'lifetime'
+      resolution: 'lifetime',
     })
     .reply(200, {
-      ClicksByDate: [{
-        Value: {
-          Clicks: CLICKS
-        }
-      }]
+      ClicksByDate: [
+        {
+          Value: {
+            Clicks: CLICKS,
+          },
+        },
+      ],
     })
 
   const totalClicks = await getTotalLinkClicks(SHORTCODE)
@@ -37,10 +37,10 @@ test('get total link clicks returns 0 when there are no clicks', async (t) => {
     .query({
       shortcode: SHORTCODE,
       advertiserid: '0',
-      resolution: 'lifetime'
+      resolution: 'lifetime',
     })
     .reply(200, {
-      ClicksByDate: []
+      ClicksByDate: [],
     })
 
   const totalClicks = await getTotalLinkClicks(SHORTCODE)

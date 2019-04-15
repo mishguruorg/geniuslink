@@ -1,9 +1,7 @@
-// @flow
-
 import { setApiKeys } from './request'
 
 type Options = {
-  key: string,
+  key: string
   secret: string
 }
 

@@ -13,9 +13,9 @@ test(`create a new tracked link`, async (t) => {
   nock('https://api.geni.us')
     .post('/v3/shorturls')
     .reply(200, {
-        shortUrl: {
-          code: SHORTCODE
-        }
+      shortUrl: {
+        code: SHORTCODE,
+      },
     })
 
   const shortcode = await addLinkToGroup(LINK, GROUP_ID)

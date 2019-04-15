@@ -1,5 +1,3 @@
-// @flow
-
 import { makeGetRequest } from '../request'
 
 const path = '/v1/group/get-details'

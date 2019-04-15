@@ -8,9 +8,5 @@ test('500 errors', async (t) => {
     .get('/500')
     .reply(500, { error: true })
 
-  try {
-    await makeGetRequest('/500')
-  } catch (error) {
-    t.is(error.name, 'FetchUnexpectedStatusError')
-  }
+  await t.throwsAsync(makeGetRequest('/500'))
 })
