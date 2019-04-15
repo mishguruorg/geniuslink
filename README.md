@@ -67,7 +67,7 @@ const groupId = 12345
 
 addLinkToGroup(url, groupId)
   .then((result) => {
-    // result: { id: 'vCHktm', shortcode: 'h4o0n' }
+    // result: { id: 'vCHktm', code: 'h4o0n' }
   })
 ```
 

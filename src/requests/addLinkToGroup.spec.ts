@@ -24,7 +24,7 @@ test('create a new tracked link', async (t) => {
 
   t.deepEqual(result, {
     id: BASE_CODE,
-    shortcode: SHORT_CODE,
+    code: SHORT_CODE,
   })
 })
 
