@@ -9,7 +9,7 @@ test('create a new tracked link', async (t) => {
   const LINK = 'http://app.mish.guru'
   const GROUP_ID = 12345
   const SHORT_CODE = 'shortcode'
-  const BASE_CODE ='basecode'
+  const BASE_CODE = 'basecode'
 
   nock('https://api.geni.us')
     .post('/v3/shorturls')
