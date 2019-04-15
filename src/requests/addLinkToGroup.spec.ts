@@ -7,20 +7,25 @@ import addLinkToGroup from './addLinkToGroup'
 
 test('create a new tracked link', async (t) => {
   const LINK = 'http://app.mish.guru'
-  const SHORTCODE = 'a823e1'
   const GROUP_ID = 12345
+  const SHORT_CODE = 'shortcode'
+  const BASE_CODE = 'basecode'
 
   nock('https://api.geni.us')
     .post('/v3/shorturls')
     .reply(200, {
       shortUrl: {
-        code: SHORTCODE,
+        code: SHORT_CODE,
+        baseCode: BASE_CODE,
       },
     })
 
-  const shortcode = await addLinkToGroup(LINK, GROUP_ID)
+  const result = await addLinkToGroup(LINK, GROUP_ID)
 
-  t.is(shortcode, SHORTCODE)
+  t.deepEqual(result, {
+    id: BASE_CODE,
+    code: SHORT_CODE,
+  })
 })
 
 test('throw error if code is not returned', async (t) => {
@@ -32,6 +37,7 @@ test('throw error if code is not returned', async (t) => {
     .reply(200, {
       shortUrl: {
         code: null,
+        baseCode: null,
       },
     })
 
