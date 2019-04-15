@@ -9,8 +9,8 @@ class GroupNameCharLimitExceeded extends ExtendableError {
 }
 
 class AddLinkToGroupFailed extends ExtendableError {
-  public constructor () {
-    super('Genius API could not generate a code, but still came back with 200')
+  public constructor (message: string) {
+    super(`Failed to generate a shortcode using Genius API: ${message}`)
   }
 }
 

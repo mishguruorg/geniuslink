@@ -14,12 +14,16 @@ const addLinkToGroup = async (url: string, groupId: string | number) => {
   })
 
   const code = R.path(['body', 'shortUrl', 'code'], res)
+  const baseCode = R.path(['body', 'shortUrl', 'baseCode'], res)
 
-  if (code == null) {
-    throw new AddLinkToGroupFailed()
+  if (code == null || baseCode == null) {
+    throw new AddLinkToGroupFailed('Either code and/or baseCode was not available!')
   }
 
-  return code
+  return {
+    id: baseCode,
+    shortcode: code
+  }
 }
 
 export default addLinkToGroup

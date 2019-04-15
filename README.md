@@ -18,7 +18,7 @@ initGeniusLink({
   secret: process.env.GENIUSLINK_API_SECRET,
 })
 
-getTotalLinkClicks('a1b2c3')
+getTotalLinkClicks('vCHktm')
   .then(console.log)
 ```
 
@@ -66,9 +66,8 @@ const url = 'https://mish.guru'
 const groupId = 12345
 
 addLinkToGroup(url, groupId)
-  .then((shortcode) => {
-    // shortcode === '0zs3at'
-    ...
+  .then((result) => {
+    // result: { id: 'vCHktm', shortcode: 'h4o0n' }
   })
 ```
 
@@ -79,9 +78,9 @@ addLinkToGroup(url, groupId)
 ```javascript
 import { getTotalLinkClicks } from '@mishguru/geniuslink'
 
-const shortcode = 'r93n5'
+const id = 'vCHktm'
 
-getTotalLinkClicks(shortcode)
+getTotalLinkClicks(id)
   .then((count) => {
     // count === 472
     ...
