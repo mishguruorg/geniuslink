@@ -3,22 +3,16 @@
 import { makePostRequest } from '../request'
 import { AddLinkToGroupFailed } from '../errors'
 
-const PATH = '/v1/links/add'
+const PATH = '/v3/shorturls'
 
-const addLinkToGroup = async (url: string, TSID: string | number) => {
+const addLinkToGroup = async (url: string, groupId: string | number) => {
   const res = await makePostRequest(PATH, {
     url,
-    TSID,
+    groupId,
     domain: 'mish.gr',
     linkCreatorSetting: 'Simple'
   })
-  const [ linkResponse ] = res.body.LinkResponses
-
-  if (linkResponse.ErrorMessage && linkResponse.ErrorMessage !== '') {
-    throw new AddLinkToGroupFailed()
-  }
-
-  return linkResponse.NewLink.ShortUrlCode
+  return res.body.shortUrl.code
 }
 
 export default addLinkToGroup
