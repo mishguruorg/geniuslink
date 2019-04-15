@@ -3,9 +3,9 @@ import qs from 'query-string'
 
 type Params = Record<string, string>
 
-type RequestOptions = {
-  method?: string
-  body?: object
+interface RequestOptions {
+  method?: string,
+  body?: object,
 }
 
 const ROOT = 'https://api.geni.us'
@@ -13,7 +13,7 @@ const ROOT = 'https://api.geni.us'
 const HEADERS = {
   Accept: 'application/json',
   'X-Api-Key': undefined as string,
-  'X-Api-Secret': undefined as string
+  'X-Api-Secret': undefined as string,
 }
 
 const setApiKeys = (key: string, secret: string) => {
@@ -26,7 +26,7 @@ const makeRequest = (path: string, options?: RequestOptions) => {
   return got(url, {
     headers: HEADERS,
     json: true,
-    ...options
+    ...options,
   })
 }
 
@@ -41,7 +41,7 @@ const makeGetRequest = (path: string, params?: Params) => {
 const makePostRequest = (path: string, body: object) => {
   return makeRequest(path, {
     method: 'POST',
-    body
+    body,
   })
 }
 

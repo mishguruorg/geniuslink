@@ -1,8 +1,8 @@
 import { setApiKeys } from './request'
 
-type Options = {
-  key: string
-  secret: string
+interface Options {
+  key: string,
+  secret: string,
 }
 
 const initGeniusLink = (options: Options) => {

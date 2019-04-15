@@ -1,3 +1,5 @@
+import * as R from 'ramda'
+
 import { makePostRequest } from '../request'
 import { AddLinkToGroupFailed } from '../errors'
 
@@ -10,7 +12,14 @@ const addLinkToGroup = async (url: string, groupId: string | number) => {
     domain: 'mish.gr',
     linkCreatorSetting: 'Simple',
   })
-  return res.body.shortUrl.code
+
+  const code = R.path(['body', 'shortUrl', 'code'], res)
+
+  if (code == null) {
+    throw new AddLinkToGroupFailed()
+  }
+
+  return code
 }
 
 export default addLinkToGroup
