@@ -1,5 +1,3 @@
-// @flow
-
 import test from 'ava'
 import nock from 'nock'
 import { GroupNameCharLimitExceeded } from '../errors'
@@ -13,20 +11,20 @@ test(`create a new tracked link`, async (t) => {
   nock('https://api.geni.us')
     .get('/v1/groups/add')
     .query({
-      GroupName: GROUP_NAME
+      GroupName: GROUP_NAME,
     })
     .reply(200, {
       IsError: {
         ErrorMessage: '',
-        ErrorTitle: ''
+        ErrorTitle: '',
       },
       NewGroupId: NEW_GROUP_ID,
       Now: '/Date(1508127068164)/',
       Request: {
         GroupName: GROUP_NAME,
         Notes: '',
-        Id: 0
-      }
+        Id: 0,
+      },
     })
 
   const newGroupId = await addGroup(GROUP_NAME)

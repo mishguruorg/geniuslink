@@ -1,5 +1,3 @@
-// @flow
-
 import test from 'ava'
 import nock from 'nock'
 
@@ -12,13 +10,13 @@ test(`getGroupDetailsByName should find the details for a group based on the gro
   nock('https://api.geni.us')
     .get('/v1/group/get-details')
     .query({
-      group: GROUP
+      group: GROUP,
     })
     .reply(200, {
       Group: {
         Name: GROUP,
-        Id: GROUP_ID
-      }
+        Id: GROUP_ID,
+      },
     })
 
   const groupDetails = await getGroupDetailsByName(GROUP)
@@ -34,13 +32,13 @@ test(`getGroupDetailsById should find the details for a group based on the group
   nock('https://api.geni.us')
     .get('/v1/group/get-details')
     .query({
-      groupId: GROUP_ID
+      groupId: GROUP_ID,
     })
     .reply(200, {
       Group: {
         Name: GROUP,
-        Id: GROUP_ID
-      }
+        Id: GROUP_ID,
+      },
     })
 
   const groupDetails = await getGroupDetailsById(GROUP_ID)

@@ -1,5 +1,3 @@
-// @flow
-
 import test from 'ava'
 import nock from 'nock'
 
@@ -13,15 +11,15 @@ test('should set API keys', async (t) => {
   nock('https://api.geni.us', {
     reqheaders: {
       'X-Api-Key': KEY,
-      'X-Api-Secret': SECRET
-    }
+      'X-Api-Secret': SECRET,
+    },
   })
     .get('/test')
     .reply(200)
 
   initGeniusLink({
     key: KEY,
-    secret: SECRET
+    secret: SECRET,
   })
 
   await makeGetRequest('/test')

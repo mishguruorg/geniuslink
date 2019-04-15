@@ -1,10 +1,8 @@
-// @flow
-
 import { setApiKeys } from './request'
 
-type Options = {
+interface Options {
   key: string,
-  secret: string
+  secret: string,
 }
 
 const initGeniusLink = (options: Options) => {

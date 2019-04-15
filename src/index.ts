@@ -1,10 +1,11 @@
-// @flow
-
 import initGeniusLink from './initGeniusLink'
 import addGroup from './requests/addGroup'
 import addLinkToGroup from './requests/addLinkToGroup'
 import getTotalLinkClicks from './requests/getTotalLinkClicks'
-import { getGroupDetailsByName, getGroupDetailsById } from './requests/getGroupDetails'
+import {
+  getGroupDetailsByName,
+  getGroupDetailsById,
+} from './requests/getGroupDetails'
 
 export {
   initGeniusLink,
@@ -12,5 +13,5 @@ export {
   addLinkToGroup,
   getTotalLinkClicks,
   getGroupDetailsByName,
-  getGroupDetailsById
+  getGroupDetailsById,
 }

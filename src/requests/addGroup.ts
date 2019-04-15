@@ -1,5 +1,3 @@
-// @flow
-
 import { makeGetRequest } from '../request'
 import { GroupNameCharLimitExceeded } from '../errors'
 
@@ -10,7 +8,7 @@ const addGroup = async (name: string) => {
     throw new GroupNameCharLimitExceeded()
   }
   const res = await makeGetRequest(PATH, {
-    GroupName: name
+    GroupName: name,
   })
   return res.body.NewGroupId
 }
