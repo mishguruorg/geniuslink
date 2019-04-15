@@ -1,5 +1,6 @@
 {
   "name": "@mishguru/geniuslink",
+  "private": true,
   "version": "2.1.2",
   "main": "dist/index.js",
   "repository": "git@github.com:mishguruorg/geniuslink",
