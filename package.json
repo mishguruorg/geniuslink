@@ -9,6 +9,8 @@
   "scripts": {
     "build": "pkg-build",
     "lint": "pkg-lint",
+    "prepublish": "pkg-build",
+    "postpublish": "git push origin master --tags",
     "tidy": "pkg-tidy",
     "test": "NODE_ENV=test pkg-test",
     "coverage": "NODE_ENV=test pkg-coverage"
