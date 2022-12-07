@@ -16,7 +16,7 @@
     "coverage": "NODE_ENV=test pkg-coverage"
   },
   "devDependencies": {
-    "@mishguru/package": "^6.0.0-next.28",
+    "@mishguru/package": "^9.6.0",
     "nock": "10.0.6"
   },
   "dependencies": {
